@@ -131,8 +131,10 @@ function bacola_scripts() {
 	wp_register_script( 'bacola_flex_thumbs',        BACOLA_INDEX_JS . '/custom/flex_thumbs.js', array('jquery'), BACOLA_VERSION, true);
 	wp_register_script( 'bacola-counter',   	 BACOLA_INDEX_JS . '/custom/counter.js', array('jquery'), BACOLA_VERSION, true);
 	wp_register_script( 'bacola-loginform',   	 BACOLA_INDEX_JS . '/custom/loginform.js', array('jquery'), BACOLA_VERSION, true);
-	wp_enqueue_script( 'bacola-sidebarfilter',   BACOLA_INDEX_JS . '/custom/sidebarfilter.js', array('jquery'), BACOLA_VERSION, true);
-	wp_enqueue_script( 'bacola-productsorting',  BACOLA_INDEX_JS . '/custom/productSorting.js', array('jquery'), BACOLA_VERSION, true);
+	if ( function_exists( 'is_shop' ) && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+		wp_enqueue_script( 'bacola-sidebarfilter',  BACOLA_INDEX_JS . '/custom/sidebarfilter.js', array('jquery'), BACOLA_VERSION, true);
+		wp_enqueue_script( 'bacola-productsorting', BACOLA_INDEX_JS . '/custom/productSorting.js', array('jquery'), BACOLA_VERSION, true);
+	}
 	wp_enqueue_script( 'bacola-producthover',    BACOLA_INDEX_JS . '/custom/productHover.js', array('jquery'), BACOLA_VERSION, true);
 	wp_enqueue_script( 'bacola-cartquantity',    BACOLA_INDEX_JS . '/custom/cartquantity.js', array('jquery'), BACOLA_VERSION, true);
 	wp_enqueue_script( 'bacola-sitescroll',      BACOLA_INDEX_JS . '/custom/sitescroll.js', array('jquery'), BACOLA_VERSION, true);
