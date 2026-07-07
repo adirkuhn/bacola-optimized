@@ -50,37 +50,39 @@ function bacola_fonts_url_inter() {
 		$font_families[] = 'Inter:wght@100;200;300;400;500;600;700;800;900';
 		}
 		
-		$query_args = array( 
-		'family' => rawurldecode( implode( '|', $font_families ) ), 
-		'subset' => rawurldecode( 'latin,latin-ext' ), 
-		); 
-		 
+		$query_args = array(
+			'family'  => rawurldecode( implode( '|', $font_families ) ),
+			'subset'  => rawurldecode( 'latin,latin-ext' ),
+			'display' => 'swap',
+		);
+
 		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css2' );
 	}
- 
+
 	return esc_url_raw( $fonts_url );
 }
 
 function bacola_fonts_url_dosis() {
 	$fonts_url = '';
 
-	$dosis = _x( 'on', 'Dosis font: on or off', 'bacola' );	
+	$dosis = _x( 'on', 'Dosis font: on or off', 'bacola' );
 
 	if ( 'off' !== $dosis ) {
 		$font_families = array();
 
 		if ( 'off' !== $dosis ) {
-		$font_families[] = 'Dosis:wght@200;300;400;500;600;700;800';
+			$font_families[] = 'Dosis:wght@200;300;400;500;600;700;800';
 		}
-		
-		$query_args = array( 
-		'family' => rawurldecode( implode( '|', $font_families ) ), 
-		'subset' => rawurldecode( 'latin,latin-ext' ), 
-		); 
-		 
+
+		$query_args = array(
+			'family'  => rawurldecode( implode( '|', $font_families ) ),
+			'subset'  => rawurldecode( 'latin,latin-ext' ),
+			'display' => 'swap',
+		);
+
 		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css2' );
 	}
- 
+
 	return esc_url_raw( $fonts_url );
 }
 
