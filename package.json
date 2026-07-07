@@ -7,13 +7,9 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "sass --watch --source-map assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css",
-    "build": "npm run build:base && npm run build:iconfont",
-    "build:base": "sass --no-source-map --style=compressed assets/scss/base.scss assets/css/base.css",
-    "build:iconfont": "sass --no-source-map --style=compressed assets/scss/iconfont.scss assets/css/iconfont.css",
-    "build:dev": "sass --source-map assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css",
-    "watch:base": "sass --watch --source-map assets/scss/base.scss:assets/css/base.css",
-    "watch:iconfont": "sass --watch --source-map assets/scss/iconfont.scss:assets/css/iconfont.css"
+    "build": "sass --no-source-map --style=compressed assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css assets/scss/woocommerce.scss:assets/css/woocommerce.css assets/scss/blog.scss:assets/css/blog.css",
+    "build:dev": "sass --source-map assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css assets/scss/woocommerce.scss:assets/css/woocommerce.css assets/scss/blog.scss:assets/css/blog.css",
+    "dev": "sass --watch --source-map assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css assets/scss/woocommerce.scss:assets/css/woocommerce.css assets/scss/blog.scss:assets/css/blog.css"
   },
   "devDependencies": {
     "sass": "1.77.8"

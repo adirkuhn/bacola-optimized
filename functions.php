@@ -99,14 +99,23 @@ function bacola_scripts() {
 
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
-	wp_enqueue_style( 'bootstrap', 				BACOLA_INDEX_CSS . '/bootstrap.min.css', false, BACOLA_VERSION);
-	wp_enqueue_style( 'select2', 				BACOLA_INDEX_CSS . '/select2.min.css', false, BACOLA_VERSION);
-	wp_enqueue_style( 'bacola-base', 			BACOLA_INDEX_CSS . '/base.css', false, BACOLA_VERSION);
+	wp_enqueue_style( 'bootstrap',          BACOLA_INDEX_CSS . '/bootstrap.min.css', false, BACOLA_VERSION );
+	wp_enqueue_style( 'select2',            BACOLA_INDEX_CSS . '/select2.min.css', false, BACOLA_VERSION );
+	wp_enqueue_style( 'bacola-base',        BACOLA_INDEX_CSS . '/base.css', false, BACOLA_VERSION );
 	wp_style_add_data( 'bacola-base', 'rtl', 'replace' );
-	wp_enqueue_style( 'bacola-font-dmsans',  	bacola_fonts_url_inter(), array(), null );
-	wp_enqueue_style( 'bacola-font-crimson',  	bacola_fonts_url_dosis(), array(), null );
-	wp_enqueue_style( 'bacola-style',         	get_stylesheet_uri() );
+	wp_enqueue_style( 'bacola-iconfont',    BACOLA_INDEX_CSS . '/iconfont.css', array( 'bacola-base' ), BACOLA_VERSION );
+	wp_enqueue_style( 'bacola-font-dmsans', bacola_fonts_url_inter(), array(), null );
+	wp_enqueue_style( 'bacola-font-crimson', bacola_fonts_url_dosis(), array(), null );
+	wp_enqueue_style( 'bacola-style',       get_stylesheet_uri() );
 	wp_style_add_data( 'bacola-style', 'rtl', 'replace' );
+
+	if ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) {
+		wp_enqueue_style( 'bacola-woocommerce', BACOLA_INDEX_CSS . '/woocommerce.css', array( 'bacola-base' ), BACOLA_VERSION );
+	}
+
+	if ( is_home() || is_archive() || is_singular( 'post' ) || is_search() ) {
+		wp_enqueue_style( 'bacola-blog', BACOLA_INDEX_CSS . '/blog.css', array( 'bacola-base' ), BACOLA_VERSION );
+	}
 
 	$mapkey = get_theme_mod('bacola_mapapi');
 
