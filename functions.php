@@ -109,9 +109,7 @@ function bacola_scripts() {
 	wp_enqueue_style( 'bacola-style',       get_stylesheet_uri() );
 	wp_style_add_data( 'bacola-style', 'rtl', 'replace' );
 
-	if ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) {
-		wp_enqueue_style( 'bacola-woocommerce', BACOLA_INDEX_CSS . '/woocommerce.css', array( 'bacola-base' ), BACOLA_VERSION );
-	}
+	wp_enqueue_style( 'bacola-woocommerce', BACOLA_INDEX_CSS . '/woocommerce.css', array( 'bacola-base' ), BACOLA_VERSION );
 
 	if ( is_home() || is_archive() || is_singular( 'post' ) || is_search() ) {
 		wp_enqueue_style( 'bacola-blog', BACOLA_INDEX_CSS . '/blog.css', array( 'bacola-base' ), BACOLA_VERSION );
