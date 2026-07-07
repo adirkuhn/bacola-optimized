@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Sass cache
+.sass-cache/
+*.css.map
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
