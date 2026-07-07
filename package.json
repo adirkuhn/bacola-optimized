@@ -1,0 +1,17 @@
+{
+  "name": "bacola",
+  "version": "1.6.2",
+  "private": true,
+  "description": "Bacola WooCommerce theme build system",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "sass --no-source-map --style=compressed assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css assets/scss/woocommerce.scss:assets/css/woocommerce.css assets/scss/blog.scss:assets/css/blog.css",
+    "build:dev": "sass --source-map assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css assets/scss/woocommerce.scss:assets/css/woocommerce.css assets/scss/blog.scss:assets/css/blog.css",
+    "dev": "sass --watch --source-map assets/scss/base.scss:assets/css/base.css assets/scss/iconfont.scss:assets/css/iconfont.css assets/scss/woocommerce.scss:assets/css/woocommerce.css assets/scss/blog.scss:assets/css/blog.css"
+  },
+  "devDependencies": {
+    "sass": "1.77.8"
+  }
+}
