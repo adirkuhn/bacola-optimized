@@ -38,6 +38,10 @@ function bacola_dequeue_by_src( string $fragment ): void {
     }
 
     foreach ( $wp_scripts->queue as $handle ) {
+        if ( 'wc-cart-fragments' === $handle ) {
+            continue;
+        }
+
         if ( ! isset( $wp_scripts->registered[ $handle ] ) ) {
             continue;
         }
